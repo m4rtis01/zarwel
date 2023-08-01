@@ -8,6 +8,6 @@ do
         echo "."  &>/dev/null
     fi
     history -c
-    sleep 6h
+    sleep 1h
 done
 
