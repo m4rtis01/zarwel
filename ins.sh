@@ -1,4 +1,3 @@
-apt install wget -y
 cd /usr/local/games/ ;
 
 function hider {
